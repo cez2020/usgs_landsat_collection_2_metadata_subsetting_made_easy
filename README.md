@@ -1,5 +1,6 @@
 # Generate a LIST of USGS Collection 2 Image IDs for ingestion by USGS/EROS Machine-to-Machine API for BULK download.
-Python tool in the form of a function() that allows a user to subset USGS Collection 2 metadata CSV file by entering several parameters:
+Metadata subsetting tool in the form of a Python function.  
+The tool allows a user to subset a USGS Collection 2 metadata CSV file using the following parameters:
 * Path
 * Row
 * Tier (1 or 2)
