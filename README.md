@@ -32,3 +32,13 @@ usgsPaths = [222, 223, 224, 225]
 usgsRows = [81, 82, 83, 84]
 ![screenshot5](/screenshots/5.png)
 
+## Output
+A clean TXT file that can be used as input in the USGS/EROS Machine-to-Machine API for BULK download.  
+TXT file will contain required header and image IDs.
+
+## Machine-to-Machine API
+* Link [here](https://m2m.cr.usgs.gov/)
+* In API, enter the name of TXT file as input in the code:  
+scenesFile = 'scenes.txt'  
+* Pay attention to directories.
+* Have fun!
