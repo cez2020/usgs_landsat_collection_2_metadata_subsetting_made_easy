@@ -42,5 +42,5 @@ TXT file will contain required header and image IDs.
 * In API, enter the name of TXT file as input in the code:  
 scenesFile = 'scenes.txt'  
 * Pay attention to directories.
-* Have fun!
+* Have fun!  
 ![screenshot7](/screenshots/7.png)
