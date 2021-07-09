@@ -10,23 +10,23 @@ def getUSGSCollTwoMetadata(csvFile, path, row, tier, cloud, timeFrom, timeTo, pr
             'Date Acquired'], index_col=['Date Acquired'])
         print("Image entries in raw dataset:", all_scenes.shape[0], "\n")
 
-    # select images by location
+    # subset images by location
     wrs_path = path  # Landsat paths
     wrs_row = row  # Landsat rows
     loc_scenes = all_scenes[all_scenes['WRS Path'].isin(wrs_path) &
                             all_scenes['WRS Row'].isin(wrs_row)]
     print("Location-specific images:", loc_scenes.shape[0], "\n")
 
-    # select tier
+    # subset images by tier
     loc_scenes = loc_scenes[loc_scenes['Collection Category'] == tier]
     print("Tier", tier[1], "images: ", loc_scenes.shape[0], "\n")
 
-    # select images with less than 15% land cloud cover
+    # subset images by cloud cover
     loc_scenes = loc_scenes[loc_scenes['Land Cloud Cover'] <= cloud]
     print("Cloud Cover condition applied. Remaining images:",
           loc_scenes.shape[0], "\n")
 
-    # subset by date
+    # subset images by date
     loc_scenes = loc_scenes[timeFrom:timeTo]
     print("Images between", timeFrom, "and",
           timeTo + ":", loc_scenes.shape[0], "\n")
@@ -34,7 +34,7 @@ def getUSGSCollTwoMetadata(csvFile, path, row, tier, cloud, timeFrom, timeTo, pr
     # select displayID column
     displayID = loc_scenes['Display ID']
 
-    # add string as a header to text file (as requested by USGS)
+    # select header for output text file (as requested by USGS)
     missionID = missionName
     if missionID == "TML1":
         missionHeader = "landsat_tm_c2_l1|displayId"
@@ -53,7 +53,7 @@ def getUSGSCollTwoMetadata(csvFile, path, row, tier, cloud, timeFrom, timeTo, pr
     fileNameOne = "temp_%s.txt" % missionHeader[:-10]
     fileNameTwo = "scenes_%s.txt" % missionHeader[:-10]
 
-    # open last scene list
+    # open last scene ID list if given
     if previous != None:
         print("Eliminated repeated images.\n")
         # open given file with previous scene IDs
@@ -65,15 +65,15 @@ def getUSGSCollTwoMetadata(csvFile, path, row, tier, cloud, timeFrom, timeTo, pr
         uniqueDisplayID = loc_scenes['Display ID'][~loc_scenes['Display ID'].isin(
             lastDisplayID[missionHeader])].drop_duplicates()
         print("Final image count:", uniqueDisplayID.shape[0], "\n")
-        # save displayID values in a text file(one per line)
+        # save scene ID values in a text file (one per line)
         uniqueDisplayID.to_csv(fileNameOne,
                                header=False, index=False, sep='\n')
     elif previous == None:
-        # save displayID values in a text file(one per line)
+        # save scene ID values in a text file (one per line)
         displayID.to_csv(fileNameOne,
                          header=False, index=False, sep='\n')
 
-    # generate a text file as output
+    # generate text file as output
     with open(fileNameOne, 'r') as readFile:
         with open(fileNameTwo, 'w') as writeFile:
             writeFile.write(missionHeader + '\n')
