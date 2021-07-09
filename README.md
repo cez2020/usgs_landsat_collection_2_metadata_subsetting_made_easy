@@ -17,7 +17,7 @@ Python tool in the form of a function() that allows a user to subset USGS Collec
 ![screenshot2](/screenshots/2.png)
 * Row and Path information may be obtained in the attached kml file or in this [link](https://www.usgs.gov/media/files/landsat-wrs-2-scene-boundaries-kml-file).
 Examples:  
-Catalunya, Spain:
+Catalunya, Spain:  
 usgsPaths = [197, 198, 199]  
 usgsRows = [30, 31, 32]
 ![screenshot3](/screenshots/3.png)
