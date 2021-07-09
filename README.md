@@ -35,6 +35,7 @@ usgsRows = [81, 82, 83, 84]
 ## Output
 A clean TXT file that can be used as input in the USGS/EROS Machine-to-Machine API for BULK download.  
 TXT file will contain required header and image IDs.
+![screenshot6](/screenshots/6.png)
 
 ## Machine-to-Machine API
 * Link [here](https://m2m.cr.usgs.gov/)
@@ -42,3 +43,4 @@ TXT file will contain required header and image IDs.
 scenesFile = 'scenes.txt'  
 * Pay attention to directories.
 * Have fun!
+![screenshot7](/screenshots/7.png)
