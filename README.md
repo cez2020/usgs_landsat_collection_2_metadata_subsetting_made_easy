@@ -12,23 +12,23 @@ Python tool in the form of a function() that allows a user to subset USGS Collec
 * User credentials to login to USGS EarthExplorer (free).
 * Approved access to USGS machine-to-machine API (request for free [here](https://ers.cr.usgs.gov/profile/access)).
 * A USGS metadata CSV file (may be obtained [here](https://www.usgs.gov/core-science-systems/nli/landsat/bulk-metadata-service)).
-![screenshot1](/screenshots/1.jpg)
+![screenshot1](/screenshots/1.png)
 * Alternatively, a smaller metada CSV file may be obtained in Earth Explorer (no API required):
-![screenshot2](/screenshots/2.jpg)
+![screenshot2](/screenshots/2.png)
 * Row and Path information may be obtained in the attached kml file or in this [link](https://www.usgs.gov/media/files/landsat-wrs-2-scene-boundaries-kml-file).
 Examples:
 Catalunya, Spain:
 usgsPaths = [197, 198, 199]
 usgsRows = [30, 31, 32]
-![screenshot3](/screenshots/3.jpg)
+![screenshot3](/screenshots/3.png)
 
 Big Island, Hawaii:
 usgsPaths = [62, 63]
 usgsRows = [46, 47]
-![screenshot4](/screenshots/4.jpg)
+![screenshot4](/screenshots/4.png)
 
 Uruguay:
 usgsPaths = [222, 223, 224, 225]
 usgsRows = [81, 82, 83, 84]
-![screenshot5](/screenshots/5.jpg)
+![screenshot5](/screenshots/5.png)
 
