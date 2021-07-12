@@ -14,7 +14,7 @@ The tool allows a user to subset a USGS Collection 2 metadata CSV file using the
 * Approved access to USGS machine-to-machine API (request for free [here](https://ers.cr.usgs.gov/profile/access)).
 * A USGS metadata CSV file (may be obtained [here](https://www.usgs.gov/core-science-systems/nli/landsat/bulk-metadata-service)).
 ![screenshot1](/screenshots/1.png)
-* Alternatively, a smaller metada CSV file may be obtained in Earth Explorer (no API required):
+* Alternatively, a smaller metada CSV file may be obtained in Earth Explorer:
 ![screenshot2](/screenshots/2.png)
 * Row and Path information may be obtained in the attached kml file or in this [link](https://www.usgs.gov/media/files/landsat-wrs-2-scene-boundaries-kml-file).
 Examples:  
